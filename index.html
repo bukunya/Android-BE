@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>BE TEST - PM kita rasis</h1>
+
+    <div
+      id="g_id_onload"
+      data-client_id="191478654932-24j21jk2pmtnvk42e7qrbt1c2ufoifnd.apps.googleusercontent.com"
+      data-callback="handleCredentialResponse"
+      data-auto_prompt="false"
+    ></div>
+    <div class="g_id_signin" data-type="standard"></div>
+
+    <h3>Token ada di console, F12 atau Ctrl + Shift + I</h3>
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script>
+      function handleCredentialResponse(response) {
+        console.log("-----------------------------------");
+        console.log("LOGIN SUCCESS! Here is your ID Token:");
+        console.log(response.credential); // <--- COPY THIS TOKEN
+        console.log("-----------------------------------");
+      }
+    </script>
+  </body>
+</html>

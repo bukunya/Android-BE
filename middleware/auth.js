@@ -7,13 +7,21 @@ const client = new OAuth2Client(CLIENT_ID);
 
 const authMiddleware = async (req, res, next) => {
   // --- BYPASS START ---
-  req.user = {
-    id: "123_test_student",
-    email: "test@mail.ugm.ac.id",
-    name: "Budi Student",
-    role: "MAHASISWA",
-  };
-  return next();
+  //   req.user = {
+  //     id: "999_test_dosen",
+  //     email: "dosen@ugm.ac.id",
+  //     name: "Dr. Dosen",
+  //     role: "DOSEN",
+  //   };
+  //   return next();
+
+  //   req.user = {
+  //     id: "123_test_student",
+  //     email: "test@mail.ugm.ac.id",
+  //     name: "Budi Student",
+  //     role: "MAHASISWA",
+  //   };
+  //   return next();
   // --- BYPASS END ---
 
   const authHeader = req.headers.authorization;
@@ -35,14 +43,22 @@ const authMiddleware = async (req, res, next) => {
 
     let role = "BLOCKED";
 
+    // --- REAL UGM EMAIL CHECK ---
+    // if (email.endsWith("@mail.ugm.ac.id")) {
+    //   role = "MAHASISWA";
+    // } else if (email.endsWith("@ugm.ac.id")) {
+    //   role = "DOSEN";
+    // } else {
+    //   return res
+    //     .status(403)
+    //     .json({ error: "Akses Ditolak: Harap gunakan email UGM." });
+    // }
+    // --- REAL UGM EMAIL CHECK ---
+
     if (email.endsWith("@mail.ugm.ac.id")) {
-      role = "MAHASISWA";
-    } else if (email.endsWith("@ugm.ac.id")) {
       role = "DOSEN";
     } else {
-      return res
-        .status(403)
-        .json({ error: "Akses Ditolak: Harap gunakan email UGM." });
+      role = "MAHASISWA";
     }
 
     const user = await prisma.user.upsert({

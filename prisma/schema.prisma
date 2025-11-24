@@ -24,7 +24,7 @@ model User {
 }
 
 model Thesis {
-  id          Int       @id @default(autoincrement())
+  id          String    @id @default(uuid())
   title       String
   docUrl      String
   status      String    @default("PENDING")

@@ -1,0 +1,137 @@
+@baseUrl = http://localhost:3000
+# -------------------------------------------------------
+# CONFIGURATION
+# -------------------------------------------------------
+# 1. Go to test.html, log in with different accounts, and copy your ID Tokens.
+# 2. Paste them below for each role.
+
+# MAHASISWA (Student) Token
+@mahasiswaToken = eyJhbGciOiJSUzI1NiIsImtpZCI6ImE1NzMzYmJiZDgxOGFhNWRiMTk1MTk5Y2Q1NjhlNWQ2ODUxMzJkM2YiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxOTE0Nzg2NTQ5MzItMjRqMjFqazJwbXRudms0MmU3cXJidDFjMnVmb2lmbmQuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIxOTE0Nzg2NTQ5MzItMjRqMjFqazJwbXRudms0MmU3cXJidDFjMnVmb2lmbmQuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDg0NTU4NzE3NTk5ODk2OTc5MDMiLCJlbWFpbCI6ImFiZHVsbGFoYWZpZmhAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5iZiI6MTc2MzY0MjExNSwibmFtZSI6IkFiZHVsbGFoIEFmaWYgSGFiaWJ1cnJvaG1hbiIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NMbFQ2d2p5bWw2cGwteVlOamRRQTd6Z19ZcW9fd1lyZEFHR2doNXpoMTVBQTJPck1rPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IkFiZHVsbGFoIEFmaWYiLCJmYW1pbHlfbmFtZSI6IkhhYmlidXJyb2htYW4iLCJpYXQiOjE3NjM2NDI0MTUsImV4cCI6MTc2MzY0NjAxNSwianRpIjoiMmRiZGZmZmQ3OTgxOTc2ZWQ0NjUzMWE3Zjc5YjFlYWJkMzkzNmNlZSJ9.fhVZeBoZc3xAM_NZzfDQopPIPeqUzixAIHRkweKF0PR88M9C35tVXaMoDSzpg3EJxy0tVmLzU6kal4p_4XzYpQP4hJCwjDesZMP7rIxY1TrJinax1czEybZjcj54O_yAQgAzWCT4ShaBv3I7Wv3eVBWIYIpgsFh8AwmVoMX2oTO7nlyfqxuYXik8MAw4K5DfnTDhAF_5RDq4HC6mZjW04A8aMyauV4aLMie6WTcAiewWKMHxfAjdGV0zss1tj4SZVXffLbCR_pGSSCoZi-QYTA1m4x2mSUNMP8gxJMZ8P2Ulsy8gQOB-l_CiM0D2PjHYeH6wDdC4Izl9dm3iQcQ5Bg
+
+# DOSEN (Lecturer) Token
+@dosenToken = eyJhbGciOiJSUzI1NiIsImtpZCI6ImE1NzMzYmJiZDgxOGFhNWRiMTk1MTk5Y2Q1NjhlNWQ2ODUxMzJkM2YiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxOTE0Nzg2NTQ5MzItMjRqMjFqazJwbXRudms0MmU3cXJidDFjMnVmb2lmbmQuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIxOTE0Nzg2NTQ5MzItMjRqMjFqazJwbXRudms0MmU3cXJidDFjMnVmb2lmbmQuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTUzNTExMzY2MDkzODczMzMxMTQiLCJoZCI6Im1haWwudWdtLmFjLmlkIiwiZW1haWwiOiJhYmR1bGxhaGFmaWZoYWJpYnVycm9obWFuQG1haWwudWdtLmFjLmlkIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5iZiI6MTc2MzY0MjE0MiwibmFtZSI6IkFCRFVMTEFIIEFGSUYgSEFCSUJVUlJPSE1BTiIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NKMFhIWHhJOVFGeXJTTTVkSTJFTWs2dEk2cngyMGV2aWtTOGN6X25tUDk3VzhNQ0RJPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IkFCRFVMTEFIIEFGSUYiLCJmYW1pbHlfbmFtZSI6IkhBQklCVVJST0hNQU4iLCJpYXQiOjE3NjM2NDI0NDIsImV4cCI6MTc2MzY0NjA0MiwianRpIjoiNDQwN2NkZTRhZTVlMTIzOTc1Nzc4OWQxMzIzMDZjYTQ5YWQwZTViMSJ9.JGZcdDxbccxX1XMumFqQvdnYG_6xLCtgwEyNBAKhzfx1cEOL5bzqdrF_UjxQybh2Oog9S4GbenFCxTdBRFKRV3xvrQkYXoiF1xKnAxOo40jvz18VkaIYBPKIdR86tg9tDOW4bNV1MuTkmGXdxmOMGgAJm4_PDUy2UtpOFn5S77OFPfr85-gl0RGNurZHn7xoX6YK-iTYvac9usDADqSrVbLenkQVzaoyRfN-GN1PNRQM8dSa8KoUfDx9PJ7EUVyJNhdcX3RKPn447rgpfGILvb-1P5s7xpsMBhr4Z_KFEOgv0BzWVImL88PROE9IwMsuyX3-3EK53cGw_2NHk4OmOw
+
+# 3. IMPORTANT:
+#    Use @mahasiswaToken for student endpoints
+#    Use @dosenToken for lecturer endpoints
+# -------------------------------------------------------
+### =====================================================
+### SECTION 0: PROFILE MANAGEMENT (Both Roles)
+### =====================================================
+
+### Get My Profile
+GET {{baseUrl}}/api/profile/me
+Authorization: Bearer {{mahasiswaToken}}
+
+### Update My Profile
+POST {{baseUrl}}/api/profile
+Authorization: Bearer {{mahasiswaToken}}
+Content-Type: application/json
+
+{
+  "name": "Updated Name 2",
+  "prodi": "Updated Study Program 2"
+}
+
+
+### =====================================================
+### SECTION 1: THE STUDENT FLOW (MAHASISWA)
+### =====================================================
+
+### 2. Check All My Theses
+# Expectation: Returns all student's theses.
+GET {{baseUrl}}/api/thesis/me/all
+Authorization: Bearer {{mahasiswaToken}}
+
+### 3. Submit a New Thesis
+# Expectation: 200 OK. Returns the created Thesis object.
+# ACTION: Copy the "id" from this response! You need it for the Dosen part.
+POST {{baseUrl}}/api/thesis
+Authorization: Bearer {{mahasiswaToken}}
+Content-Type: application/json
+
+{
+  "title": "System Architecture for UGM Scheduler",
+  "docUrl": "https://docs.google.com/thesis.pdf"
+}
+
+### 4. Check Dashboard Again
+# Expectation: Should now include the thesis you just submitted.
+GET {{baseUrl}}/api/thesis/me/all
+Authorization: Bearer {{mahasiswaToken}}
+
+
+### =====================================================
+### SECTION 2: THE LECTURER FLOW (DOSEN)
+### =====================================================
+# NOTE: Switch your auth.js logic to DOSEN before running these!
+
+### 5. View Pending Applications (5 most recent)
+# Expectation: You should see the thesis from Step 3 here.
+GET {{baseUrl}}/api/dosen/pending
+Authorization: Bearer {{dosenToken}}
+
+### 6. View ALL Data (Your new endpoint)
+# Expectation: Should see a list of everything.
+GET {{baseUrl}}/api/dosen/all
+Authorization: Bearer {{dosenToken}}
+
+### 7. Get Specific Thesis Details for Review
+# ACTION: Replace 'THESIS_ID_HERE' with the ID you got in Step 3.
+# Expectation: Returns detailed thesis info with student data.
+GET {{baseUrl}}/api/dosen/thesis/d4c87d3d-8efa-4392-adc5-f992ff7ef155
+Authorization: Bearer {{dosenToken}}
+
+### 8. Review the Thesis (Approve)
+# ACTION: Replace 'THESIS_ID_HERE' with the ID from Step 3.
+# Expectation: Updates status to APPROVED.
+PUT {{baseUrl}}/api/dosen/review/d4c87d3d-8efa-4392-adc5-f992ff7ef155
+Authorization: Bearer {{dosenToken}}
+Content-Type: application/json
+
+{
+  "decision": "APPROVED"
+}
+
+### 9. Schedule the Thesis (Set Date)
+# ACTION: Replace 'THESIS_ID_HERE' with the ID from Step 3.
+# Expectation: Sets scheduledAt date and keeps status APPROVED.
+PUT {{baseUrl}}/api/dosen/schedule/d4c87d3d-8efa-4392-adc5-f992ff7ef155
+Authorization: Bearer {{dosenToken}}
+Content-Type: application/json
+
+{
+  "date": "2025-12-25T10:00:00Z"
+}
+
+### 10. View Scheduled List
+# Expectation: The thesis should now appear here, sorted by date.
+GET {{baseUrl}}/api/dosen/scheduled
+Authorization: Bearer {{dosenToken}}
+
+
+### =====================================================
+### SECTION 3: VERIFICATION
+### =====================================================
+# NOTE: Switch auth.js back to MAHASISWA (optional)
+
+### 12. Test Reject Decision
+# Create another thesis first, then reject it
+POST {{baseUrl}}/api/thesis
+Authorization: Bearer {{mahasiswaToken}}
+Content-Type: application/json
+
+{
+  "title": "Another Thesis for Testing",
+  "docUrl": "https://docs.google.com/test.pdf"
+}
+
+### 13. Reject the Thesis (as DOSEN)
+# ACTION: Replace with the new thesis ID from Step 12
+PUT {{baseUrl}}/api/dosen/review/NEW_THESIS_ID_HERE
+Authorization: Bearer {{dosenToken}}
+Content-Type: application/json
+
+{
+  "decision": "REJECTED"
+}
